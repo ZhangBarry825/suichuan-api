@@ -1,0 +1,684 @@
+[ 2018-07-13T07:10:21+08:00 ] 123.206.191.77 /admin/index/checked?num=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003703s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0013s ]
+SQL: UPDATE `checking` SET `is_checking`='0' WHERE ( id = '1' ) [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `task` WHERE ( task_id LIKE '%http://www.suichuan.gov.cn%' AND end_time is null ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `task` SET `end_time`='2018-07-13,07:10:21' WHERE ( id = '70' ) [ RunTime:0.0019s ]
+ERR: 1050:Table 'link_title_count' already exists
+ [ SQL语句 ] : 
+        create table link_title_count (select url, title, count(*) as ct from links group by url, title);
+        create table link_title_map (select url, title, ct from link_title_count where title <> '' group by url having ct = max(ct));
+        update links, link_title_map
+        set links.title = link_title_map.title
+        where links.url = link_title_map.url;
+        update links, link_title_map
+        set links.ptitle = link_title_map.title
+        where links.purl = link_title_map.url;
+ERR: 1050:Table 'link_title_count' already exists
+ [ SQL语句 ] : 
+        create table link_title_count (select url, title, count(*) as ct from links group by url, title);
+        create table link_title_map (select url, title, ct from link_title_count where title <> '' group by url having ct = max(ct));
+        update links, link_title_map
+        set links.title = link_title_map.title
+        where links.url = link_title_map.url;
+        update links, link_title_map
+        set links.ptitle = link_title_map.title
+        where links.purl = link_title_map.url;
+
+[ 2018-07-13T07:56:49+08:00 ] 123.206.191.77 /admin/index/checked?num=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001974s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000850s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0034s ]
+SQL: UPDATE `checking` SET `is_checking`='0' WHERE ( id = '2' ) [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `task` WHERE ( task_id LIKE '%http://pub.jian.gov.cn/jxsc%' AND end_time is null ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `task` SET `end_time`='2018-07-13,07:56:49' WHERE ( id = '71' ) [ RunTime:0.0028s ]
+ERR: 1050:Table 'link_title_count' already exists
+ [ SQL语句 ] : 
+        create table link_title_count (select url, title, count(*) as ct from links group by url, title);
+        create table link_title_map (select url, title, ct from link_title_count where title <> '' group by url having ct = max(ct));
+        update links, link_title_map
+        set links.title = link_title_map.title
+        where links.url = link_title_map.url;
+        update links, link_title_map
+        set links.ptitle = link_title_map.title
+        where links.purl = link_title_map.url;
+ERR: 1050:Table 'link_title_count' already exists
+ [ SQL语句 ] : 
+        create table link_title_count (select url, title, count(*) as ct from links group by url, title);
+        create table link_title_map (select url, title, ct from link_title_count where title <> '' group by url having ct = max(ct));
+        update links, link_title_map
+        set links.title = link_title_map.title
+        where links.url = link_title_map.url;
+        update links, link_title_map
+        set links.ptitle = link_title_map.title
+        where links.purl = link_title_map.url;
+
+[ 2018-07-13T11:14:47+08:00 ] 123.206.191.77 //admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001126s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0444s ]
+SQL: SELECT * FROM `member` WHERE ( name = 'admin' AND password = '4297f44b13955235245b2497399d7a93' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `mem_to_dep` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id = '1' ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-07-13T11:14:47+08:00 ] 123.206.191.77 //admin/column/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+SQL: SHOW COLUMNS FROM `column` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `column` WHERE ( available = '1' AND site = '1' ) LIMIT 0,8   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `column` WHERE ( available = '1' AND site = '1' )  [ RunTime:0.0008s ]
+
+[ 2018-07-13T11:14:51+08:00 ] 123.206.191.77 //admin/department/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+NOTIC: [8] Undefined index: num /www/wwwroot/test.luckyme.com.cn/Application/Admin/Controller/DepartmentController.class.php 第 28 行.
+SQL: SHOW COLUMNS FROM `dep_to_col` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( site = '1' ) LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( site = '1' )  [ RunTime:0.0015s ]
+
+[ 2018-07-13T11:14:52+08:00 ] 123.206.191.77 //admin/member/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000399s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`name`,`phone`,`email`,`type`,`beizhu`,`site` FROM `member` WHERE ( site = '1' ) LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mem_to_dep` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id ='2' AND site = '1' )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `member` WHERE ( site = '1' )  [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:15:00+08:00 ] 123.206.191.77 //admin/member/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003416s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`name`,`phone`,`email`,`type`,`beizhu`,`site` FROM `member` WHERE ( site = '2' ) LIMIT 0,8   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `member` WHERE ( site = '2' )  [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:15:01+08:00 ] 123.206.191.77 //admin/member/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000328s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`name`,`phone`,`email`,`type`,`beizhu`,`site` FROM `member` WHERE ( site = '3' ) LIMIT 0,8   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `member` WHERE ( site = '3' )  [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:15:02+08:00 ] 123.206.191.77 //admin/member/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`name`,`phone`,`email`,`type`,`beizhu`,`site` FROM `member` WHERE ( site = '1' ) LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mem_to_dep` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id ='2' AND site = '1' )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `member` WHERE ( site = '1' )  [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:15:04+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0010s ]
+
+[ 2018-07-13T11:15:07+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000341s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 40,8   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0011s ]
+
+[ 2018-07-13T11:15:10+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:15:13+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000272s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 40,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:15:18+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0005s ]
+
+[ 2018-07-13T11:15:20+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 40,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0010s ]
+
+[ 2018-07-13T11:15:23+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0007s ]
+
+[ 2018-07-13T11:15:26+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 8,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0007s ]
+
+[ 2018-07-13T11:15:27+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:15:29+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 40,8   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0004s ]
+
+[ 2018-07-13T11:15:32+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:15:33+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000369s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:15:34+08:00 ] 123.206.191.77 //admin/member/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`name`,`phone`,`email`,`type`,`beizhu`,`site` FROM `member` WHERE ( site = '1' ) LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `mem_to_dep` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id ='2' AND site = '1' )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `member` WHERE ( site = '1' )  [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:15:34+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001083s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:15:34+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000449s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0004s ]
+
+[ 2018-07-13T11:15:36+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0004s ]
+
+[ 2018-07-13T11:15:37+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000455s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:15:57+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000299s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:15:57+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:16:03+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:16:03+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:16:05+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:16:05+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000328s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:16:06+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-13T11:16:06+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000333s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0009s ]
+
+[ 2018-07-13T11:16:07+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:16:07+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000422s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0004s ]
+
+[ 2018-07-13T11:16:27+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:16:27+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0004s ]
+
+[ 2018-07-13T11:16:33+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:16:33+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0004s ]
+
+[ 2018-07-13T11:16:35+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000495s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-13T11:16:35+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:16:36+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:16:36+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000459s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:16:37+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000291s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:16:37+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001674s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001983s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000406s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:16:57+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000293s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:16:57+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:17:03+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000251s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:17:03+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0005s ]
+
+[ 2018-07-13T11:17:05+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000285s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-13T11:17:05+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:17:06+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:17:06+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-07-13T11:17:07+08:00 ] 123.206.191.77 //admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T11:17:07+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000390s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+

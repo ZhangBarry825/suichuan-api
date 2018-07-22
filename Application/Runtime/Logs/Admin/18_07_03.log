@@ -1,0 +1,100 @@
+[ 2018-07-03T07:10:25+08:00 ] 123.206.191.77 /admin/index/checked?num=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0014s ]
+SQL: UPDATE `checking` SET `is_checking`='0' WHERE ( id = '1' ) [ RunTime:0.0212s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `task` WHERE ( task_id LIKE '%http://www.suichuan.gov.cn%' AND end_time is null ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `task` SET `end_time`='2018-07-03,07:10:25' WHERE ( id = '50' ) [ RunTime:0.0044s ]
+ERR: 1050:Table 'link_title_count' already exists
+ [ SQL语句 ] : 
+        create table link_title_count (select url, title, count(*) as ct from links group by url, title);
+        create table link_title_map (select url, title, ct from link_title_count where title <> '' group by url having ct = max(ct));
+        update links, link_title_map
+        set links.title = link_title_map.title
+        where links.url = link_title_map.url;
+        update links, link_title_map
+        set links.ptitle = link_title_map.title
+        where links.purl = link_title_map.url;
+ERR: 1050:Table 'link_title_count' already exists
+ [ SQL语句 ] : 
+        create table link_title_count (select url, title, count(*) as ct from links group by url, title);
+        create table link_title_map (select url, title, ct from link_title_count where title <> '' group by url having ct = max(ct));
+        update links, link_title_map
+        set links.title = link_title_map.title
+        where links.url = link_title_map.url;
+        update links, link_title_map
+        set links.ptitle = link_title_map.title
+        where links.purl = link_title_map.url;
+
+[ 2018-07-03T08:03:26+08:00 ] 123.206.191.77 /admin/index/checked?num=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0051s ]
+SQL: UPDATE `checking` SET `is_checking`='0' WHERE ( id = '2' ) [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `task` WHERE ( task_id LIKE '%http://pub.jian.gov.cn/jxsc%' AND end_time is null ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: UPDATE `task` SET `end_time`='2018-07-03,08:03:26' WHERE ( id = '51' ) [ RunTime:0.0012s ]
+ERR: 1050:Table 'link_title_count' already exists
+ [ SQL语句 ] : 
+        create table link_title_count (select url, title, count(*) as ct from links group by url, title);
+        create table link_title_map (select url, title, ct from link_title_count where title <> '' group by url having ct = max(ct));
+        update links, link_title_map
+        set links.title = link_title_map.title
+        where links.url = link_title_map.url;
+        update links, link_title_map
+        set links.ptitle = link_title_map.title
+        where links.purl = link_title_map.url;
+ERR: 1050:Table 'link_title_count' already exists
+ [ SQL语句 ] : 
+        create table link_title_count (select url, title, count(*) as ct from links group by url, title);
+        create table link_title_map (select url, title, ct from link_title_count where title <> '' group by url having ct = max(ct));
+        update links, link_title_map
+        set links.title = link_title_map.title
+        where links.url = link_title_map.url;
+        update links, link_title_map
+        set links.ptitle = link_title_map.title
+        where links.purl = link_title_map.url;
+
+[ 2018-07-03T15:09:49+08:00 ] 123.206.191.77 //admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000405s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001738s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002014s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `member` WHERE ( name = 'admin' AND password = '4297f44b13955235245b2497399d7a93' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `mem_to_dep` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id = '1' ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-07-03T15:09:49+08:00 ] 123.206.191.77 //admin/column/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000853s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `column` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `column` WHERE ( available = '1' AND site = '1' ) LIMIT 0,8   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `column` WHERE ( available = '1' AND site = '1' )  [ RunTime:0.0010s ]
+
+[ 2018-07-03T15:09:51+08:00 ] 123.206.191.77 //admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001146s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001243s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0004s ]
+

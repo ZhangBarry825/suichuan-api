@@ -1,0 +1,225 @@
+[ 2018-06-04T10:48:12+08:00 ] 192.168.33.1 /admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008665s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.013368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013430s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `member` WHERE ( name = 'admin' AND password = '4297f44b13955235245b2497399d7a93' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `mem_to_dep` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id = '1' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-06-04T10:55:14+08:00 ] 192.168.33.1 /admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.022027s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.034380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.034436s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `member` WHERE ( name = 'admin' AND password = '4297f44b13955235245b2497399d7a93' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mem_to_dep` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id = '1' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-06-04T10:55:14+08:00 ] 192.168.33.1 /admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009710s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `member` WHERE ( name = 'admin' AND password = '4297f44b13955235245b2497399d7a93' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mem_to_dep` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id = '1' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-06-04T10:55:15+08:00 ] 192.168.33.1 /admin/column/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012734s ]
+SQL: SHOW COLUMNS FROM `column` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `column` WHERE ( available = '1' AND site = '1' ) LIMIT 0,8   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `column` WHERE ( available = '1' AND site = '1' )  [ RunTime:0.0005s ]
+
+[ 2018-06-04T10:55:17+08:00 ] 192.168.33.1 /admin/department/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015810s ]
+NOTIC: [8] Undefined index: num /VagrantShare/suichuan.barry.umdev.cn/Application/Admin/Controller/DepartmentController.class.php 第 28 行.
+SQL: SHOW COLUMNS FROM `dep_to_col` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( site = '1' ) LIMIT 0,8   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( site = '1' )  [ RunTime:0.0003s ]
+
+[ 2018-06-04T10:55:18+08:00 ] 192.168.33.1 /admin/member/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012326s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`name`,`phone`,`email`,`type`,`beizhu`,`site` FROM `member` WHERE ( site = '1' ) LIMIT 0,8   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mem_to_dep` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id ='2' AND site = '1' )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id ='3' AND site = '1' )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id ='13' AND site = '1' )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `member` WHERE ( site = '1' )  [ RunTime:0.0002s ]
+
+[ 2018-06-04T10:55:20+08:00 ] 192.168.33.1 /admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012306s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0002s ]
+
+[ 2018-06-04T10:55:21+08:00 ] 192.168.33.1 /admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011947s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0003s ]
+
+[ 2018-06-04T10:55:23+08:00 ] 192.168.33.1 /admin/department/deparmentlistall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.017520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.017579s ]
+NOTIC: [8] Undefined index: page /VagrantShare/suichuan.barry.umdev.cn/Application/Admin/Controller/DepartmentController.class.php 第 51 行.
+NOTIC: [8] Undefined index: num /VagrantShare/suichuan.barry.umdev.cn/Application/Admin/Controller/DepartmentController.class.php 第 52 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.138763s ]
+INFO: [ app_end ] --END-- [ RunTime:0.138808s ]
+
+[ 2018-06-04T10:55:23+08:00 ] 192.168.33.1 /admin/department/detail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.013630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013683s ]
+SQL: SHOW COLUMNS FROM `dep_to_col` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( id = 'undefined' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-06-04T10:55:24+08:00 ] 192.168.33.1 /admin/department/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005842s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012330s ]
+NOTIC: [8] Undefined index: num /VagrantShare/suichuan.barry.umdev.cn/Application/Admin/Controller/DepartmentController.class.php 第 28 行.
+SQL: SHOW COLUMNS FROM `dep_to_col` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( site = '1' ) LIMIT 0,8   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( site = '1' )  [ RunTime:0.0003s ]
+
+[ 2018-06-04T10:55:25+08:00 ] 192.168.33.1 /admin/department/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011840s ]
+NOTIC: [8] Undefined index: num /VagrantShare/suichuan.barry.umdev.cn/Application/Admin/Controller/DepartmentController.class.php 第 28 行.
+SQL: SHOW COLUMNS FROM `dep_to_col` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( site = '2' ) LIMIT 0,8   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( site = '2' )  [ RunTime:0.0002s ]
+
+[ 2018-06-04T10:55:26+08:00 ] 192.168.33.1 /admin/department/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012323s ]
+NOTIC: [8] Undefined index: num /VagrantShare/suichuan.barry.umdev.cn/Application/Admin/Controller/DepartmentController.class.php 第 28 行.
+SQL: SHOW COLUMNS FROM `dep_to_col` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( site = '2' ) LIMIT 0,8   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( site = '2' )  [ RunTime:0.0002s ]
+
+[ 2018-06-04T10:55:28+08:00 ] 192.168.33.1 /admin/department/deparmentlistall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006007s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.017345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.017503s ]
+NOTIC: [8] Undefined index: page /VagrantShare/suichuan.barry.umdev.cn/Application/Admin/Controller/DepartmentController.class.php 第 51 行.
+NOTIC: [8] Undefined index: num /VagrantShare/suichuan.barry.umdev.cn/Application/Admin/Controller/DepartmentController.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `department` [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: limit /VagrantShare/suichuan.barry.umdev.cn/ThinkPHP/Library/Think/Db/Driver.class.php 第 961 行.
+SQL: SELECT * FROM `department` WHERE ( site = '2' ) LIMIT 0,20   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `department` WHERE ( site = '2' )  [ RunTime:0.0004s ]
+
+[ 2018-06-04T10:55:29+08:00 ] 192.168.33.1 /admin/department/detail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.018397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018453s ]
+SQL: SHOW COLUMNS FROM `dep_to_col` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `dep_to_col` WHERE ( id = '94' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-06-04T10:55:51+08:00 ] 192.168.33.1 /admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004936s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011344s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-06-04T10:55:51+08:00 ] 192.168.33.1 /admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011342s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0001s ]
+
+[ 2018-06-04T10:55:52+08:00 ] 192.168.33.1 /admin/check/checking
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005732s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011524s ]
+SQL: SHOW COLUMNS FROM `checking` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `checking` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-06-04T10:55:52+08:00 ] 192.168.33.1 /admin/check/listall
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011489s ]
+SQL: SHOW COLUMNS FROM `task` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' ) ORDER BY start_time desc LIMIT 0,8   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `task` WHERE ( end_time != 'null' )  [ RunTime:0.0001s ]
+

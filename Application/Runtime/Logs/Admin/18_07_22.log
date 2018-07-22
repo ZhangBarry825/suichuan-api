@@ -1,0 +1,12 @@
+[ 2018-07-22T15:45:48+08:00 ] 192.168.33.1 /admin/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011766s ]
+SQL: SHOW COLUMNS FROM `member` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `member` WHERE ( name = 'admin' AND password = '4297f44b13955235245b2497399d7a93' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `mem_to_dep` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `mem_to_dep` WHERE ( member_id = '1' ) LIMIT 1   [ RunTime:0.0002s ]
+
