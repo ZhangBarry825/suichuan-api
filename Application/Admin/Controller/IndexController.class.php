@@ -328,7 +328,7 @@ class IndexController extends BaseController
             foreach ($tasks as $index=>$item){
                 $date=strtotime($item['start_time']);
                 $del_days[$index]=(time()-$date)/(60*60*24);
-                if($del_days[$index]>1){
+                if($del_days[$index]>7){
                     D('Columns_updates')->where("task_id = '".$item['task_id']."'")->delete();
                     D('Failed_links')->where("task_id = '".$item['task_id']."'")->delete();
                     D('Task')->where("task_id = '".$item['task_id']."'")->delete();
