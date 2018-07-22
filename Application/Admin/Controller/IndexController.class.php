@@ -174,58 +174,59 @@ class IndexController extends BaseController
                 foreach ($columns1 as $i => $value) {
                     $column = D('Column')->where(" id = " . $value['column_id']." AND site = '".$task_num."'")->find();
                     $data2 = D('Columns_updates')->where("task_id = '" . $task_id . "'  AND purl = '" . $column['purl'] . "'")->select();
-                    $max = '';
-                    $url = '';
-                    $check_date='';
-                    foreach ($data2 as $i2 => $value2) {
-                        $check_date=$value2['check_date'];
-                        $max = $data2[$i2]['sdate'];
-                        $url = $data2[$i2]['purl'];
-                        if ($max < $value2['sdate']) {
-                            $max = $value2['sdate'];
-                            $url = $value2['purl'];
+                    if($data2){
+                        $max = '';
+                        $url = '';
+                        $check_date='';
+                        foreach ($data2 as $i2 => $value2) {
+                            $check_date=$value2['check_date'];
+                            $max = $data2[$i2]['sdate'];
+                            $url = $data2[$i2]['purl'];
+                            if ($max < $value2['sdate']) {
+                                $max = $value2['sdate'];
+                                $url = $value2['purl'];
+                            }
                         }
-                    }
-                    $update_list['check_date'] = $check_date;
-                    $update_list['department'] = $department['name'];
-                    $update_list['column'] = $value['column_name'];
-                    $update_list['url'] = $url;
-                    $update_list['recent_date'] = $max;
-                    $update_list['limit_date'] = $column['limit_date'];
-                    $update_list['limit_name'] = $column['limit_name'];
-                    $update_list['limit_num'] = $column['limit_num'];
+                        $update_list['check_date'] = $check_date;
+                        $update_list['department'] = $department['name'];
+                        $update_list['column'] = $value['column_name'];
+                        $update_list['url'] = $url;
+                        $update_list['recent_date'] = $max;
+                        $update_list['limit_date'] = $column['limit_date'];
+                        $update_list['limit_name'] = $column['limit_name'];
+                        $update_list['limit_num'] = $column['limit_num'];
 
-                    if($update_list['limit_date']==-1){
-                        $update_list['next_date'] = '适时更新';
-                    }elseif ($update_list['limit_date']==-2){
-                        $recent_date=$update_list['recent_date'];
-                        $update_list['next_date'] = date("Y-m-d",strtotime("$recent_date + 1 year"));
-                    }elseif ($update_list['limit_date']==-3){
-                        $recent_date=$update_list['recent_date'];
-                        $update_list['next_date'] = date("Y-m-d",strtotime("$recent_date + 3 month"));
-                    }elseif ($update_list['limit_date']==-4){
-                        $recent_date=$update_list['recent_date'];
-                        $update_list['next_date'] = "链接失效时更新";
-                    }elseif ($update_list['limit_date']==-5){
-                        $recent_date=$update_list['recent_date'];
-                        $update_list['next_date'] = "变更更新";
-                    }else{
-                        $recent_date=$update_list['recent_date'];
-                        $limit_date=$update_list['limit_date'];
-                        $update_list['next_date'] = date("Y-m-d",strtotime("$recent_date + ".$limit_date." day"));
+                        if($update_list['limit_date']==-1){
+                            $update_list['next_date'] = '适时更新';
+                        }elseif ($update_list['limit_date']==-2){
+                            $recent_date=$update_list['recent_date'];
+                            $update_list['next_date'] = date("Y-m-d",strtotime("$recent_date + 1 year"));
+                        }elseif ($update_list['limit_date']==-3){
+                            $recent_date=$update_list['recent_date'];
+                            $update_list['next_date'] = date("Y-m-d",strtotime("$recent_date + 3 month"));
+                        }elseif ($update_list['limit_date']==-4){
+                            $recent_date=$update_list['recent_date'];
+                            $update_list['next_date'] = "链接失效时更新";
+                        }elseif ($update_list['limit_date']==-5){
+                            $recent_date=$update_list['recent_date'];
+                            $update_list['next_date'] = "变更更新";
+                        }else{
+                            $recent_date=$update_list['recent_date'];
+                            $limit_date=$update_list['limit_date'];
+                            $update_list['next_date'] = date("Y-m-d",strtotime("$recent_date + ".$limit_date." day"));
+                        }
+                        //判断是否超时
+                        if(strtotime($update_list['next_date'])<time()){
+                            $update_list['is_time_out']='超时';
+                        }elseif(strtotime($update_list['next_date'])>time()){
+                            $update_list['is_time_out']=' ';
+                        }
+                        if($update_list['next_date']=='适时更新'||$update_list['next_date']=='链接失效时更新'||$update_list['next_date']=='变更更新'){
+                            $update_list['is_time_out']=' ';
+                        }
+                        D('Update_list')->add($update_list);
                     }
-                    //判断是否超时
 
-                    if(strtotime($update_list['next_date'])<time()){
-                        $update_list['is_time_out']='超时';
-                    }elseif(strtotime($update_list['next_date'])>time()){
-                        $update_list['is_time_out']=' ';
-                    }
-                    if($update_list['next_date']=='适时更新'||$update_list['next_date']=='链接失效时更新'||$update_list['next_date']=='变更更新'){
-                        $update_list['is_time_out']=' ';
-                    }
-//
-                    D('Update_list')->add($update_list);
                 }
             }
 
